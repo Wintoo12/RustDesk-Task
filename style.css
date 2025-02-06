@@ -17,3 +17,13 @@ input {
   flex-direction: column;
   width: 300px;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: green;
+  text-decoration: underline;
+}
