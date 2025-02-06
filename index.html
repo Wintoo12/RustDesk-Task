@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>RustDesk</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="center">
+				<h1>RustDesk</h1>
+				<p>
+					<a href="rustdesk://117704810" onclick="copyPasswordRustDesk()">
+						ID: 117704810
+					</a>
+				</p>
+				<p>Password: <span id="rdPassword">raspberry1</span></p>
+			</div>
+			<div class="center">
+				<h1>AnyDesk</h1>
+				<a href="anydesk://488586374" onclick="copyPasswordAnyDesk()">
+					ID: 488586374
+				</a>
+				<p>Password: <span id="adPassword">raspberry</span></p>
+			</div>
+		</div>
+		<script>
+			function copyPasswordAnyDesk() {
+				let password = document.getElementById("adPassword").innerText;
+				navigator.clipboard
+					.writeText(password)
+					.then(() => {
+						alert("Password copied! Just paste it in AnyDesk.");
+					})
+					.catch((err) => {
+						console.error("Failed to copy:", err);
+					});
+			}
+
+			function copyPasswordRustDesk() {
+				let password = document.getElementById("rdPassword").innerText;
+				navigator.clipboard
+					.writeText(password)
+					.then(() => {
+						alert("Password copied! Just paste it in RustDesk.");
+					})
+					.catch((err) => {
+						console.error("Failed to copy:", err);
+					});
+			}
+		</script>
+	</body>
+</html>
